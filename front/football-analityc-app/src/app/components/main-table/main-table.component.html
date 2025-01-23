@@ -1,35 +1,22 @@
-<div class="container">
-  <div>
-    <h3>
-      table
-    </h3>
-    <div *ngFor="let team of data; let index = index">
-      {{index + 1}}
+<mat-tab-group>
+  <mat-tab label="Table">
+    <app-tournament-table></app-tournament-table>
+  </mat-tab>
 
-      <img class="teamIcon" src="{{team.teamIconUrl}}" alt="{{team.shortName}}">
-      {{team.teamName}}
-      {{team.points}}
+  <mat-tab label="Scorers">
+    <div>
+      <h3>
+        scorers
+      </h3>
+      <div *ngFor="let player of goalGetters; let index = index">
+        {{index + 1}}
+        {{player.goalGetterName}}
+        {{player.goalCount}}
+      </div>
     </div>
-  </div>
+  </mat-tab>
 
-  <div>
-    <h3>
-      scorers
-    </h3>
-    <div *ngFor="let player of goalGetters; let index = index">
-      {{index + 1}}
-      {{player.goalGetterName}}
-      {{player.goalCount}}
-    </div>
-  </div>
-
-</div>
-
-<div>
-  <h3>
-    tours
-  </h3>
-</div>
-<div *ngFor="let tour of tours; let index = index">
-  <app-tour-info [tour]="tour"></app-tour-info>
-</div>
+  <mat-tab label="Tours">
+    <app-tours-tab></app-tours-tab>
+  </mat-tab>
+</mat-tab-group>

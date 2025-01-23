@@ -1,0 +1,12 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let tour of tours; let i = index">
+    <mat-expansion-panel-header>
+      <mat-panel-title> {{i+1}} </mat-panel-title>
+      <mat-panel-description>
+        {{tour.groupName}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-tour-info [tour]="tour"></app-tour-info>
+  </mat-expansion-panel>
+</mat-accordion>
